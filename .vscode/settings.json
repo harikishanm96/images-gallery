@@ -1,12 +1,52 @@
 {
+    // Set tab size to 2 spaces for all languages
     "editor.tabSize": 2,
+  
+    // Validate JavaScript, JSX, and HTML files with ESLint
     "eslint.validate": [
-        "html",
-        "javascript",
-        "javascriptreact"
+      "javascript",
+      "javascriptreact",
+      "html"
     ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
+  
+    // Automatically fix ESLint issues on save
+    "editor.codeActionsOnSave": [
+    "source.fixAll.eslint"
+    ],
+  
+    // Python interpreter path (ensure this is correct for your environment)
+    "python.pythonPath": "api/.venv/bin/python3",
+  
+    // Enable pycodestyle with specific arguments
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": [
+      "--max-line-length=88"
+    ],
+  
+    // Enable pylint for additional Python linting
+    "python.linting.pylintEnabled": true,
+  
+    // Use Black for Python formatting
+    "python.formatting.provider": "black",
+  
+    // Disable autopep8 to avoid conflict with Black
+    "python.formatting.autopep8Enabled": false,
+  
+    // Enable linting on save for Python
+    "python.linting.lintOnSave": true,
+  
+    // Enable format on save for Python files
+    "[python]": {
+      "editor.formatOnSave": true
     },
-    "python.pythonPath": "api/.venv/bin/python3"
-}
+  
+    // Enable mypy for static type checking (optional)
+    "python.linting.mypyEnabled": true,
+  
+    // Optional: Add Node.js environment support for ESLint
+    "eslint.options": {
+      "env": {
+        "node": true
+      }
+    }
+  }
